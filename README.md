@@ -13,7 +13,7 @@ services:
     deploy:
       replicas: 1
       restart_policy:
-        condition: on-failure
+        condition: none
     command: '<flags> <URL>'
 ```
 
