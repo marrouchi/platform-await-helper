@@ -17,4 +17,4 @@ until [ $(curl --write-out "%{http_code}\n" --silent --output /dev/null "$@") = 
     sleep 1
 done
 
-echo "await-helper done"
+echo "Successful response from $@"
