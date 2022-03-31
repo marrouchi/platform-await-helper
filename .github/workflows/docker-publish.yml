@@ -22,5 +22,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: jembi/platform-await-helper:${{ github.ref_name }}
+          tags: jembi/await-helper:${{ github.ref_name }}
 
