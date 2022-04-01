@@ -4,10 +4,10 @@ START_TIME=$(date +%s)
 
 echo "Waiting for $@"
 until [ $(curl --write-out "%{http_code}\n" --silent --output /dev/null "$@") = "200" ]; do
-    timeDiff=$(($(date +%s) - $START_TIME))
-    if [ "$timeDiff" -ge 60 ] && [ "$timeDiff" -lt 61 ]; then
+    TimeDiff=$(($(date +%s) - $START_TIME))
+    if [ "$TimeDiff" -ge 60 ] && [ "$TimeDiff" -lt 61 ]; then
         echo "Warning: Waited 60s with no response. This is taking longer than it should..."
-    elif [ "$timeDiff" -ge 120 ]; then
+    elif [ "$TimeDiff" -ge 120 ]; then
         echo "Fatal: Waited 120s with no response. Exiting..."
         exit 1
     fi
