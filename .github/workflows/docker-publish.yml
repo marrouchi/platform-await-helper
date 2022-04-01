@@ -3,7 +3,7 @@ name: Build and Push platform-await-helper image
 on:
   push:
     tags:
-      - '*.*.*'
+      - "*.*.*"
 
 jobs:
   build-and-push:
@@ -23,4 +23,3 @@ jobs:
         with:
           push: true
           tags: jembi/await-helper:${{ github.ref_name }}
-
