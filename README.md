@@ -9,11 +9,11 @@ A docker-compose file calling the platform-await-helper should look as follows:
 ```yml
 services:
   await-helper:
-    image: jembi/await-helper:1.0
+    image: jembi/await-helper:1.0.0
     deploy:
       replicas: 1
       restart_policy:
-        condition: on-failure
+        condition: none
     command: '<flags> <URL>'
 ```
 
