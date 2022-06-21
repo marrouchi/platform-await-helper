@@ -7,8 +7,8 @@ until [ $(curl --write-out "%{http_code}\n" --silent --output /dev/null "$@") = 
     TimeDiff=$(($(date +%s) - $START_TIME))
     if [ "$TimeDiff" -ge 60 ] && [ "$TimeDiff" -lt 61 ]; then
         echo "Warning: Waited 60s with no response. This is taking longer than it should..."
-    elif [ "$TimeDiff" -ge 120 ]; then
-        echo "Fatal: Waited 120s with no response. Exiting..."
+    elif [ "$TimeDiff" -ge 300 ]; then
+        echo "Fatal: Waited 300s with no response. Exiting..."
         exit 1
     fi
 
